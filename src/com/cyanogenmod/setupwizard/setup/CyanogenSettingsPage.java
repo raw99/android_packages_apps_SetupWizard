@@ -191,7 +191,7 @@ public class CyanogenSettingsPage extends SetupPage {
                     Log.i(TAG, "Applying default lockscreen");
                     LockPatternUtils util = new LockPatternUtils(mContext);
                     util.setThirdPartyKeyguard(cn);
-                    disableImmersivePromptForLockscreen(cn);
+                    //disableImmersivePromptForLockscreen(cn);
                 } catch (PackageManager.NameNotFoundException | SecurityException e) {
                     Log.w(TAG, "Error setting default lockscreen: " + cn, e);
                 }
@@ -199,13 +199,13 @@ public class CyanogenSettingsPage extends SetupPage {
         }
     }
 
-    private void disableImmersivePromptForLockscreen(ComponentName cn) {
+    //private void disableImmersivePromptForLockscreen(ComponentName cn) {
         // prevents the immersive screen hint for the lockscreen
-        WindowManagerPolicyControl policy = new WindowManagerPolicyControl();
-        policy.reloadFromSetting(mContext);
-        policy.addToPreconfirmWhiteList(cn.getPackageName());
-        policy.saveToSettings(mContext);
-    }
+        //WindowManagerPolicyControl policy = new WindowManagerPolicyControl();
+        //policy.reloadFromSetting(mContext);
+        //policy.addToPreconfirmWhiteList(cn.getPackageName());
+        //policy.saveToSettings(mContext);
+    //}
 
     private static boolean hideKeyDisabler(Context ctx) {
         final CMHardwareManager hardware = CMHardwareManager.getInstance(ctx);
